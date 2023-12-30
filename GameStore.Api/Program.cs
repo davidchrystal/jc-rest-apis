@@ -4,6 +4,6 @@ using GameStore.Api.Endpoints;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRepositories(builder.Configuration);
 var app = builder.Build();
-app.Services.MigrateDb();
+await app.Services.MigrateDbAsync();
 app.MapGamesEndpoints();
 app.Run();
